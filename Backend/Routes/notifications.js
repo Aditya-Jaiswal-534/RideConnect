@@ -4,13 +4,13 @@ const authTokenHandler = require('../MiddleWares/authTokenHandler');
 const router  = express.Router();
 
 
-const client = require('twilio')(accountSid,authToken);
+
 const sendSms = async (body) =>{
   const  nbody = JSON.stringify(body)
     let msgOptions = {
         from : TWILIO_FROM_NUMBER,
         to : body.companionPhoneNumber,
-        body:nbody,
+        body:nbod
     }
     try{
         const message = await client.messages.create(msgOptions);
